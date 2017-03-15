@@ -16,3 +16,5 @@ chmod 0600 /etc/pki/rsyslog/*
 iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 514 -j ACCEPT
 /sbin/service iptables save
 service iptables restart
+yes | cp -rf /home/rsyslog.conf /etc/rsyslog.conf
+service rsyslog restart
